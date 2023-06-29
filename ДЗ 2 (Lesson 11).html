@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 2 Theme 11
+        </title>
+    </head>
+        <body>
+            <script>
+                'use strict'; 
+                
+                // Создайте класс Банковский счёт, который имеет
+                // следующие атрибуты:
+                // • номер;
+                // • вкладчик;
+                // • денежная сумма;
+                // • годовой процент.
+                // Добавьте методы осуществляющие следующие операции:
+                // • внести средства;
+                // • начислить проценты.
+                // Создайте массив элементов класса Банковский счёт.
+                
+                let money = +prompt('Сколько вы хотите внести денежных средств', 
+                '10000');
+
+                    class BankAccount {
+                   
+                        constructor(accountNumber, contributor, sumMoney, annualInterest) {
+                            this.accountNumber = accountNumber;
+                            this.contributor = contributor;
+                            this.sumMoney = sumMoney;
+                            this.annualInterest = annualInterest;
+                        };
+                    
+                        depositMoney(money) {
+                            return this.sumMoney + money;
+                        };
+ 
+                        percent() {
+                            return this.depositMoney(money) * this.annualInterest / 100
+                        };
+                        
+                        toString() {
+                            return `${this.percent()}`;
+                        };
+                    };
+
+                    const bankAccounts = [
+                        new BankAccount(500200, 'Эристов Евгений Сергеевич', 10500, 10),
+                        new BankAccount(500201, 'Потапов Иван Степанович', 20150, 12),
+                        new BankAccount(500202, 'Семёнов Вадим Алексеевич', 35240, 15),
+                    ];
+
+                    let x = prompt('Выберете цифру клиента, кому планируете зачислить денежные' +
+                     ' средства: Эристов Е.С. - 1, Потапов И.С. - 2, Семёнов В.А. - 3', '1');
+
+                while(true) {
+                        
+                    if (x == 1) {
+                        let bankaccount = bankAccounts[0].depositMoney(money) + bankAccounts[0].percent();
+                        console.log('Клиент банка -', bankAccounts[0].contributor);
+                        console.log('Остаток на счете =', bankAccounts[0].sumMoney);
+                        console.log('Номер счета -', bankAccounts[0].accountNumber); 
+                        console.log('Внесено денежных средств -', money, 'Общая сумма на счете клиента =', 
+                            bankAccounts[0].depositMoney(money));
+                        console.log('Проценты за год составят (по ставке 10%) =', bankAccounts[0].percent(), 
+                            'Общая сумма на счете через год будет =', bankaccount);
+                        break; 
+                    } else if (x == 2) {
+                        let bankaccount = bankAccounts[1].depositMoney(money) + bankAccounts[1].percent();
+                        console.log('Клиент банка -', bankAccounts[1].contributor);
+                        console.log('Остаток на счете =', bankAccounts[1].sumMoney);
+                        console.log('Номер счета -', bankAccounts[1].accountNumber); 
+                        console.log('Внесено денежных средств -', money, 'Общая сумма на счете клиента =', 
+                            bankAccounts[1].depositMoney(money));
+                        console.log('Проценты за год составят (по ставке 12%) =', bankAccounts[1].percent(), 
+                            'Общая сумма на счете через год будет =', bankaccount);
+                        break; 
+                    } else if (x == 3) {
+                        let bankaccount = bankAccounts[2].depositMoney(money) + bankAccounts[2].percent();
+                        console.log('Клиент банка -', bankAccounts[2].contributor);
+                        console.log('Остаток на счете =', bankAccounts[2].sumMoney);
+                        console.log('Номер счета -', bankAccounts[2].accountNumber); 
+                        console.log('Внесено денежных средств -', money, 'Общая сумма на счете клиента =', 
+                            bankAccounts[2].depositMoney(money));
+                        console.log('Проценты за год составят (по ставке 12%) =', bankAccounts[2].percent(), 
+                            'Общая сумма на счете через год будет =', bankaccount);
+                        break; 
+                    } else {
+                        break;
+                    };
+                };
+
+            </script>
+        </body>
+</html>

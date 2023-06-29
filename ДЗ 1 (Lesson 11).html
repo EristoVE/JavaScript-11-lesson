@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Case 1 Theme 11
+        </title>
+    </head>
+        <body>
+            <script>
+                'use strict'; 
+                
+                // Реализуйте класс Employee (Работник), который будет иметь следующие
+                // свойства:
+                // • firstName (имя);
+                // • lastName (фамилия);
+                // • rate (оплата за день работы);
+                // • days (количество отработанных дней).
+                // Также класс должен содержать метод getSalary(), который будет вычислять
+                // зарплату работника за все время и метод toString(), который будет выводить
+                // фамилию и имя работника, а также зарплату, вычисляемую методом getSalary().
+                
+                    class Employee {
+                   
+                        constructor(lastName, firstName, rate, days) {
+                            this.lastName = lastName;
+                            this.firstName = firstName
+                            this.rate = rate;
+                            this.days = days;
+                        };
+                    
+                        getSalary() {
+                            return this.rate * this.days;
+                        };
+                        
+                        toString() {
+                            return `${this.lastName} ${this.firstName} ${this.getSalary()}`;
+                        };
+                    };
+                   
+                    let employee = new Employee ('Эристов', 'Евгений - Оплата за всё время =', 5000, 31);
+                    console.log(employee.toString());
+                    
+            </script>
+        </body>
+</html>
